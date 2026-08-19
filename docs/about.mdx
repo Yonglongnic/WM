@@ -1,0 +1,26 @@
+---
+title: About the local deployment
+description: A practical overview of the local real-time global intelligence dashboard.
+---
+
+# About this deployment
+
+This project is a local real-time global intelligence dashboard. It combines public news, geopolitics, military activity, financial markets, energy, climate, aviation, maritime and cyber signals in one browser interface.
+
+The local edition is designed for a single-machine Docker deployment. It keeps the frontend, API sidecar, relay, Redis cache and configuration within the project stack, so the host does not need a global runtime or a separate login service.
+
+## What the platform does
+
+- normalizes signals from public upstream providers;
+- tracks freshness and preserves the last valid cache when an upstream is unavailable;
+- presents map layers and domain panels with source context;
+- provides free public fallbacks for optional sources whose keys are empty;
+- exposes a local API surface for the dashboard and embedded views.
+
+## Local access model
+
+The Compose stack enables public local access. The dashboard does not require registration, sign-in or membership to open ordinary pages and panels. Optional AI and data-source keys improve coverage, but missing optional keys should result in a graceful empty state or a free-source fallback.
+
+## Data and licensing
+
+Each upstream provider remains responsible for its own data license, rate limit and attribution requirements. The local project keeps provider names and source attribution where required. Source-code licensing is defined by the `LICENSE` file in the project root.
